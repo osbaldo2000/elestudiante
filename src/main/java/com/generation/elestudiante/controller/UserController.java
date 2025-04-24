@@ -48,22 +48,44 @@ public class UserController {
         return userService.addUser(user);
     }
 
-    @PostMapping(path="{userId}/add-direction")//http:/localhost:8080/api/users/2/add-direction  metodo post
-    public User addDirectionUser(@PathVariable("userId") Integer id, @RequestBody DirectionsRequest directionsRequest){
-        return userService.addDirectionUser(id, directionsRequest);
+    @PostMapping(path = "{userId}/add-direction") // http://localhost:8080/api/users/2/add-direction
+    public ResponseEntity<String> addDirectionUser(
+            @PathVariable("userId") Integer id,
+            @RequestBody DirectionsRequest directionsRequest) {
+        try {
+            userService.addDirectionUser(id, directionsRequest);
+            return ResponseEntity.ok("Dirección agregada correctamente");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Ocurrió un error al agregar la dirección: " + e.getMessage());
+        }
     }
 
     @PutMapping("/{userId}")
     public ResponseEntity<?> updateUser(@PathVariable Integer userId, @RequestBody User updatedUser) {
         return userRepository.findById(userId).map(user -> {
+            // Verificar si el correo ya está registrado en otro usuario
+            Optional<User> existingUserWithEmail = userRepository.findByEmail(updatedUser.getEmail());
+            if (existingUserWithEmail.isPresent() && !existingUserWithEmail.get().getUserId().equals(userId)) {
+                return ResponseEntity.status(HttpStatus.CONFLICT).body("El correo ya está registrado por otro usuario");
+            }
+
             user.setName(updatedUser.getName());
             user.setEmail(updatedUser.getEmail());
-            user.setPassword(updatedUser.getPassword());
+
+            // Encriptar la contraseña si se proporciona una nueva
+            if (updatedUser.getPassword() != null && !updatedUser.getPassword().isEmpty()) {
+                String encodedPassword = passwordEncoder.encode(updatedUser.getPassword());
+                user.setPassword(encodedPassword);
+            }
+
             user.setRole(updatedUser.getRole());
             userRepository.save(user);
             return ResponseEntity.ok("Usuario actualizado correctamente");
-        }).orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuario no encontrado"));
+        }).orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al actualizar: datos incorrectos"));
     }
+
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Integer id) {

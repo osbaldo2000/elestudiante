@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
 document.getElementById('update-user-form').addEventListener('submit', async (e) => {
   e.preventDefault();
 
@@ -30,11 +29,15 @@ document.getElementById('update-user-form').addEventListener('submit', async (e)
   const response = await fetch(`http://localhost:8080/api/users/${userId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, password })
+      body: JSON.stringify({ name, email, password }),
   });
 
   const message = await response.text();
   alert(message);
+
+  if (response.ok) {
+      window.location.reload(); // Recargar la página si la actualización fue exitosa
+  }
 });
 
 document.getElementById('add-direction-form').addEventListener('submit', async (e) => {
@@ -49,9 +52,13 @@ document.getElementById('add-direction-form').addEventListener('submit', async (
   const response = await fetch(`http://localhost:8080/api/users/${userId}/add-direction`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ street, neighborhood, zipCode, country })
+      body: JSON.stringify({ street, neighborhood, zipCode, country }),
   });
 
   const message = await response.text();
   alert(message);
+
+  if (response.ok) {
+      window.location.reload(); // Recargar la página si la dirección se agregó correctamente
+  }
 });

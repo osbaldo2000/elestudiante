@@ -45,10 +45,16 @@ public class OrderController {
     @PostMapping
     public ResponseEntity<?> createOrder(@RequestBody OrderDetailDTO orderRequest) {
         try {
+            // Log de la solicitud recibida
+            System.out.println("Recibido pedido para el usuario: " + orderRequest.getUserEmail());
+            System.out.println("Items recibidos: " + orderRequest.getItems().size());
+
             Order createdOrder = orderService.createOrder(orderRequest);
             return ResponseEntity.ok(createdOrder);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al crear el pedido: " + e.getMessage());
+            e.printStackTrace(); // Log del error completo
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error al crear el pedido: " + e.getMessage());
         }
     }
 

@@ -28,6 +28,7 @@ public class OrderDetailDTO {
     public static class OrderItem {
         private Integer productId; // ID del producto
         private Integer quantity;  // Cantidad del producto
+        private Double unitPrice;  // Precio unitario del producto
 
         // Getters y Setters
         public Integer getProductId() {
@@ -44,6 +45,14 @@ public class OrderDetailDTO {
 
         public void setQuantity(Integer quantity) {
             this.quantity = quantity;
+        }
+
+        public Double getUnitPrice() {
+            return unitPrice;
+        }
+
+        public void setUnitPrice(Double unitPrice) {
+            this.unitPrice = unitPrice;
         }
     }
 }
