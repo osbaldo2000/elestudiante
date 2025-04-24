@@ -16,7 +16,7 @@ document.getElementById('register-form').addEventListener('submit', async (e) =>
         if (response.ok) {
             const message = await response.text();
             alert(message);
-            window.location.href = 'productos.html'; // Redirige al inicio de sesión
+            window.location.href = 'login.html'; // Redirige al inicio de sesión
         } else {
             const error = await response.text();
             alert(`Error: ${error}`);
