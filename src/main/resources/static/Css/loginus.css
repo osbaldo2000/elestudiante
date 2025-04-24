@@ -179,7 +179,7 @@ input[type="text"]:focus {
 
 @media (max-width: 768px) {
   #background-video {
-    display: none;
+    /* display: none;  Esto lo elimina o comenta */
   }
   .min-h-screen.flex.items-center.justify-center {
     background-size: cover;
@@ -204,3 +204,4 @@ input[type="text"]:focus {
   z-index: -1;
   overflow: hidden;
 }
+
