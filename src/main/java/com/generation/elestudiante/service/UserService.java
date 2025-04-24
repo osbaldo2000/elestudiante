@@ -40,6 +40,10 @@ public class UserService {
         return userRepository.findById(id);
     }
 
+    public Optional<User> getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
+
     public User addUser(User user){
         Optional<User> optionaUser = userRepository.findByEmail(user.getEmail());
         if(optionaUser.isPresent())throw  new IllegalArgumentException("El correo ya existe");

@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     logoutButton.addEventListener('click', () => {
         localStorage.removeItem('loggedIn');
         localStorage.removeItem('userEmail');
+        localStorage.removeItem('userId'); // Elimina el userId
         alert('Sesión cerrada correctamente');
         window.location.href = 'productos.html'; // Redirigir a la página de inicio de sesión
     });
