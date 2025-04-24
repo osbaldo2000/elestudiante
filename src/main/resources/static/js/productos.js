@@ -60,33 +60,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 /*Carrucel de fotos*/
-
-/*trancision de paginas*/
-document.addEventListener("DOMContentLoaded", () => {
-    // Detectar cuando se hace clic en enlaces internos
-    document.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", event => {
-        const href = link.getAttribute("href");
-
-        // Ignorar enlaces externos o que no naveguen
-        if (href.startsWith("#") || href.includes("javascript")) return;
-
-        event.preventDefault(); // Evita la navegación inmediata
-
-        // Agregar clase para iniciar la transición
-        document.body.classList.add("fade-out");
-
-        // Esperar el fin de la animación antes de cambiar la página
-        setTimeout(() => {
-          window.location.href = href;
-        }, 500); // Duración de la animación (coincide con CSS)
-      });
-    });
-
-    // Restaurar opacidad al cargar la nueva página
-    window.addEventListener("pageshow", () => {
-      document.body.classList.remove("fade-out");
-    });
-  });
-/*trancision de paginas*/
-
