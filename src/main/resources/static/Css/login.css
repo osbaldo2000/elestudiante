@@ -1,0 +1,129 @@
+:root {
+    --negro: #040404;
+    --gris-oscuro: #3c3a3c;
+    --rojo: #b22227;
+    --crema: #ede0dd;
+    --gris: #7c7c84;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--negro);
+    color: var(--crema);
+}
+
+.login-container {
+    background-color: var(--gris-oscuro);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.title {
+    font-family: 'Lobster', cursive;
+    font-size: 2rem;
+    color: var(--rojo);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    color: var(--gris);
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--crema);
+}
+
+.form-input {
+    width: 90%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--gris);
+    color: var(--negro);
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.form-input:focus {
+    background-color: var(--crema);
+}
+
+.btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--rojo);
+    color: var(--crema);
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #a81e23;
+}
+
+form#register-form {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: var(--crema);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form#register-form h2 {
+    font-family: 'Lobster', cursive;
+    color: var(--rojo);
+    text-align: center;
+}
+
+form#register-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--gris-oscuro);
+}
+
+form#register-form input, form#register-form select, form#register-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--gris);
+    border-radius: 5px;
+}
+
+form#register-form button {
+    background-color: var(--rojo);
+    color: var(--crema);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form#register-form button:hover {
+    background-color: var(--gris-oscuro);
+    color: var(--rojo);
+}
