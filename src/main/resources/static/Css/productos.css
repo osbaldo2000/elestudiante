@@ -376,3 +376,20 @@ h3 {
     text-align: center;
 }
 
+
+/*Boton para configuracion usuario*/
+#update-user-page-button {
+    position: fixed;
+    right: 130px;
+    top: 96px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 720px) {
+    #update-user-page-button {
+        right: 100px;
+        top: 90px;
+    }
+}

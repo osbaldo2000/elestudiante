@@ -1,3 +1,24 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const userActionsDiv = document.getElementById('user-actions');
+    const loggedIn = localStorage.getItem('loggedIn');
+
+    // Verificar si el usuario ha iniciado sesión
+    if (loggedIn === 'true') {
+        userActionsDiv.style.display = 'block'; // Mostrar el contenedor del botón
+    }
+
+    // Redirigir al usuario a la página de actualización
+    const updateButton = document.getElementById('update-user-page-button');
+    if (updateButton) {
+        updateButton.addEventListener('click', () => {
+            window.location.href = './Usercontrol.html'; // Ruta al archivo
+        });
+    } else {
+        console.error('Botón de actualización no encontrado');
+    }
+});
+
+
 document.getElementById('update-user-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
