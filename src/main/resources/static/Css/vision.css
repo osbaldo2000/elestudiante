@@ -137,7 +137,7 @@ nav a:last-child {
 }
 
 nav a:hover {
-    transform: scale(1.5);
+    transform: scale(1.1);
     background: linear-gradient(to right, #7c7c84, #ede0dd); 
 }
 
