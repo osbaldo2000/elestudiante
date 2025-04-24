@@ -42,54 +42,42 @@ function hacerPedido() {
         return;
     }
 
-    // Aseguramos que los items tengan la estructura correcta para el backend
     const items = carrito.map(item => ({
         productId: item.productId,
-        quantity: item.quantity,
-        unitPrice: item.price
+        quantity: item.quantity
     }));
-
-    const payload = {
-        userEmail: userEmail,
-        items: items
-    };
-    
-    console.log('Enviando datos al servidor:', payload);
 
     fetch('http://localhost:8080/api/orders', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(payload),
-        credentials: 'include'
+        body: JSON.stringify({
+            userEmail: userEmail,
+            items: items
+        })
     })
-    .then(response => {
-        console.log('Respuesta del servidor:', response.status);
-        if (!response.ok) {
-            return response.text().then(text => {
-                console.error('Respuesta de error:', text);
-                throw new Error(`Error al enviar el pedido: ${response.status} - ${text}`);
-            });
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Respuesta exitosa:', data);
-        alert('¡Pedido realizado con éxito!');
-        carrito = [];
-        actualizarCarrito();
-    })
-    .catch(err => {
-        console.error('Error procesando el pedido:', err);
-        alert('Hubo un error al procesar el pedido. Inténtalo de nuevo.');
-    });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al enviar el pedido');
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert('¡Pedido realizado con éxito!');
+            carrito = [];
+            actualizarCarrito();
+        })
+        .catch(err => {
+            console.error('Error procesando el pedido:', err);
+            alert('Hubo un error al procesar el pedido. Inténtalo de nuevo.');
+        });
 }
 
 // Función para probar el carrito con un producto de ejemplo
 function probarProducto() {
     const productoPrueba = {
-        productId: 1,  
+        productId: 4,  
         name: "Hamburguesa",
         price: 89.00
     };
