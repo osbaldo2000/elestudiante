@@ -1,28 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="./css/login.css">
-</head>
-<body>
-    <form id="update-user-form">
+    <link rel="stylesheet" href="Css/usercontrol.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="header-actions">
+        <button id="back-to-home" class="back-button">Volver a Inicio</button>
+      </div>
+      <form id="update-user-form">
         <input type="text" id="update-name" placeholder="Nombre" required />
-        <input type="email" id="update-email" placeholder="Correo electrónico" required />
-        <input type="password" id="update-password" placeholder="Contraseña" required />
+        <input
+          type="email"
+          id="update-email"
+          placeholder="Correo electrónico"
+          required
+        />
+        <input
+          type="password"
+          id="update-password"
+          placeholder="Contraseña"
+          required
+        />
         <button type="submit">Actualizar Usuario</button>
-    </form>
+      </form>
 
-    <form id="add-direction-form">
+      <form id="add-direction-form">
         <input type="text" id="street" placeholder="Calle" required />
         <input type="text" id="neighborhood" placeholder="Colonia" required />
         <input type="text" id="zip-code" placeholder="Código Postal" required />
         <input type="text" id="country" placeholder="País" required />
         <button type="submit">Agregar Dirección</button>
-    </form>
-    
-</div>
-<script src="./js/Usercontrol.js"></script>
-</body>
+      </form>
+    </div>
+    <script src="./js/Usercontrol.js"></script>
+  </body>
 </html>
