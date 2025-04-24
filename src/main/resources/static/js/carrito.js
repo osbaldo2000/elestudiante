@@ -106,7 +106,7 @@ function butonChilaquilesPollo() {
 }
 function butonHuevosDivorciados() {
     const huevosDivorciados = {
-        productId: 7,
+        productId: 4,
         name: "Huevos Divorciados",
         price: 50.00
     };
@@ -114,7 +114,7 @@ function butonHuevosDivorciados() {
 }
 function butonMargarita() {
     const margarita = {
-        productId: 8,
+        productId: 5,
         name: "Margarita",
         price: 75.00
     };
@@ -122,7 +122,7 @@ function butonMargarita() {
 }
 function butonCubaLibre() {
     const cubaLibre = {
-        productId: 9,
+        productId: 6,
         name: "Cuba Libre",
         price: 60.00
     };
@@ -130,7 +130,7 @@ function butonCubaLibre() {
 }
 function butonMojito() {
     const mojito = {
-        productId: 10,
+        productId: 7,
         name: "Mojito",
         price: 85.00
     };
@@ -138,7 +138,7 @@ function butonMojito() {
 }
 function butonSangria() {
     const sangria = {
-        productId: 11,
+        productId: 8,
         name: "Sangria",
         price: 89.00
     };
@@ -146,7 +146,7 @@ function butonSangria() {
 }
 function butonAlambre() {
     const alambre = {
-        productId: 12,
+        productId: 9,
         name: "Alambre",
         price: 165.00
     };
@@ -154,7 +154,7 @@ function butonAlambre() {
 }
 function butonArrachera() {
     const arrachera = {
-        productId: 13,
+        productId: 10,
         name: "Arrachera",
         price:170.00
     };
@@ -162,7 +162,7 @@ function butonArrachera() {
 }
 function butonBistecAsado() {
     const bistecAsado = {
-        productId: 14,
+        productId: 11,
         name: "Bistec Asado",
         price: 145.00
     };
@@ -170,7 +170,7 @@ function butonBistecAsado() {
 }
 function butonEnsaladaPollo() {
     const ensaldaPollo = {
-        productId: 15,
+        productId: 12,
         name: "Ensalada de Pollo",
         price: 145.00
     };
@@ -178,7 +178,7 @@ function butonEnsaladaPollo() {
     }
 function butonEnsaladaBistec() {
     const ensaldaBistec = {
-        productId: 16,
+        productId: 13,
         name: "Ensalada de Bistec",
         price: 115.00
     };
@@ -186,7 +186,7 @@ function butonEnsaladaBistec() {
 }
 function butonRebanadaPastel() {
     const rebanadaPastel = {
-        productId: 17,
+        productId: 14,
         name: "Rebanada de Pastel",
         price: 45.00
     };
@@ -194,7 +194,7 @@ function butonRebanadaPastel() {
 }
 function butonHotCakes() {
     const hotCakes = {
-        productId: 18,
+        productId: 15,
         name: "Hot Cakes",
         price: 70.00
     };
@@ -202,7 +202,7 @@ function butonHotCakes() {
 }
 function butonPanFrances() {
     const panFrances = {
-    productId: 19,
+    productId: 16,
     name: "Pan Frances",
     price: 75.00
     };
@@ -210,7 +210,7 @@ function butonPanFrances() {
 }
 function butonLatte() {
     const latte = {
-    productId: 20,
+    productId: 17,
     name: "Latte",
     price: 35.00
     };
@@ -218,7 +218,7 @@ function butonLatte() {
 }
 function butonCapuccinoMenta() {
     const capuccinoMenta = {
-    productId: 21,
+    productId: 18,
     name: "Capuccino Menta",
     price: 48.00
     };
@@ -226,7 +226,7 @@ function butonCapuccinoMenta() {
 }
 function butonCapuccino() {
     const capuccino = {
-    productId: 22,
+    productId: 19,
     name: "Capuccino",
     price: 35.00
     };
@@ -234,7 +234,7 @@ function butonCapuccino() {
 }
 function butonTe() {
     const te = {
-    productId: 23,
+    productId: 20,
     name: "Te",
     price: 28.00
     };
@@ -242,7 +242,7 @@ function butonTe() {
 }
 function butonTizana() {
     const tizana = {
-    productId: 24,
+    productId: 21,
     name: "Tizana",
     price: 55.00
     };
@@ -250,7 +250,7 @@ function butonTizana() {
 }
 function butonFrappe() {
     const frappe = {
-    productId: 25,
+    productId: 22,
     name: "Frappe",
     price: 50.00
     };
@@ -258,7 +258,7 @@ function butonFrappe() {
 }
 function butonFrappeCajeta() {
     const frappeCajeta = {
-    productId: 26,
+    productId: 23,
     name: "Frappe de Cajeta",
     price: 60.00
     };
@@ -266,7 +266,7 @@ function butonFrappeCajeta() {
 }
 function butonMalteadaFresa() {
     const malteadaFresa = {
-    productId: 27,
+    productId: 24,
     name: "Malteada Fresa",
     price: 61.00
     };
@@ -274,7 +274,7 @@ function butonMalteadaFresa() {
 }
 function butonBistecMexa() {
     const bistecMexa = {
-    productId: 28,
+    productId: 25,
     name: "Bistec Mexa",
     price: 145.00
     };
@@ -282,7 +282,7 @@ function butonBistecMexa() {
 }
 function butonChoriqueso() {
     const choriqueso = {
-    productId: 29,
+    productId: 26,
     name: "Choriqueso",
     price: 125.00
     };
@@ -290,7 +290,7 @@ function butonChoriqueso() {
 }
 function butonGrillChicken() {
     const grillChicken = {
-    productId: 30,
+    productId: 27,
     name: "Grill Chicken",
     price: 145.00
     };
@@ -298,7 +298,7 @@ function butonGrillChicken() {
 }
 function butonPlatoMilanesa() {
     const platoMilanesa = {
-    productId: 31,
+    productId: 28,
     name: "Plato de Milanesa",
     price: 175.00
     };
@@ -306,7 +306,7 @@ function butonPlatoMilanesa() {
 }
 function butonConga() {
     const conga = {
-    productId: 32,
+    productId: 29,
     name: "Conga",
     price: 45.00
     };
@@ -314,7 +314,7 @@ function butonConga() {
 }
 function butonAguaJamaica() {
     const aguaJamaica = {
-    productId: 33,
+    productId: 30,
     name: "Agua de Jamaica",
     price: 20.00
     };
@@ -322,7 +322,7 @@ function butonAguaJamaica() {
 }
 function butonLimonada() {
     const limonada = {
-    productId: 34,
+    productId: 31,
     name: "Limonada",
     price: 35.00
     };
@@ -330,7 +330,7 @@ function butonLimonada() {
 }
 function butonAlitas() {
     const alitas = {
-    productId: 35,
+    productId: 32,
     name: "Alitas",
     price: 105.00
     };
@@ -338,7 +338,7 @@ function butonAlitas() {
 }
 function butonBoneless() {
     const boneless = {
-    productId: 36,
+    productId: 33,
     name: "Boneless",
     price: 105.00
     };
@@ -346,7 +346,7 @@ function butonBoneless() {
 }
 function butonDedosQueso() {
     const dedosQueso = {
-    productId: 37,
+    productId: 34,
     name: "Dedos de Queso",
     price: 75.00
     };
