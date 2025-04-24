@@ -35,6 +35,20 @@
         <input type="text" id="country" placeholder="País" required />
         <button type="submit">Agregar Dirección</button>
       </form>
+
+      <div id="orders-container">
+        <!-- Los pedidos se cargarán aquí -->
+    </div>
+    
+        
+        <div id="user-orders-container" class="px-4">
+            <!-- Aquí se cargarán los pedidos dinámicamente -->
+            <div class="loading text-center">
+                <i class="fas fa-spinner fa-spin fa-3x text-white"></i>
+                <p class="mt-2 text-white">Cargando tus pedidos...</p>
+            </div>
+        </div>
+            
     </div>
     <script src="js/Usercontrol.js"></script>
   </body>

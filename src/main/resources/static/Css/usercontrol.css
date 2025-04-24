@@ -132,3 +132,12 @@ button:active {
     padding: 12px;
   }
 }
+
+.order-container { margin-bottom: 20px; border: 1px solid #ccc; padding: 10px; border-radius: 8px; }
+.order-header { display: flex; justify-content: space-between; align-items: center; }
+.order-status { padding: 4px 8px; border-radius: 4px; }
+.status-pending { background-color: orange; color: white; }
+.status-preparing { background-color: blue; color: white; }
+.status-delivered { background-color: green; color: white; }
+.order-details { display: none; margin-top: 10px; }
+.order-total { font-weight: bold; text-align: right; }
