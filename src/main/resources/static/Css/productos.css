@@ -17,11 +17,15 @@ body {
 }
 
 /* Para celulares y pantallas pequeñas */
-@media (max-width: 480px) {
-  body {
-    font-size: 14px;
-  }
-}
+@media (max-width: 360px) {
+           body {
+               font-size: 12px;
+           }
+           #titulo {
+               font-size: 1rem;
+           }
+       }
+
 /* Ocultar la barra de scroll pero permitir el desplazamiento */
 html, body {
     overflow-y: scroll; /* Asegura que el scroll vertical esté habilitado */
@@ -105,11 +109,12 @@ section .flex {
     display: flex;
     gap: 16px;
     justify-content: space-between;
-}
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en varias filas */
+    }
 
 section .flex-1 {
     flex: 1;
-    min-width: 200px; /* Asegura que los carruseles sean responsivos */
+    min-width: 150px; /* Asegura que los carruseles sean responsivos */
 }
 
 .swiper-container {
@@ -127,9 +132,10 @@ section .flex-1 {
 }
 
 .swiper-slide img {
-    width: 35vw; /* Ajustar tamaño de la imagen */
-    height: 20vw; /* Mantener proporción */
-    border-radius: 10px; /* Bordes redondeados */
+     width: 90%; /* Ajusta el tamaño en pantallas pequeñas */
+     height: auto; /* Mantiene proporciones */
+     border-radius: 10px;
+
     margin-bottom: 10px; /* Separación de la imagen con el texto */
 }
 
@@ -166,7 +172,7 @@ section .flex-1 {
 
 /* Botones de navegación */
 nav a {
-    transition: transform 0.2s ease-in-out; 
+    transition: transform 0.2s ease-in-out;
     padding: 2px 12px; 
     display: inline-block;
     border-right: 1px solid #7c7c84; /* Línea divisoria entre los botones */
