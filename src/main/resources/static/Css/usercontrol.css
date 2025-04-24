@@ -32,30 +32,18 @@ body {
 }
 
 .back-button {
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 16px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.1s;
-  display: flex;
-  align-items: center;
-}
-
-.back-button::before {
-  content: "←";
-  margin-right: 8px;
-  font-size: 16px;
+  text-decoration: none; /* Quita la línea de subrayado */
+  color: inherit; /* Mantiene el color del texto original */
+  padding: 10px 20px; /* Añade un poco de espaciado */
+  border: 1px solid #000; /* Opcional: Añade un borde */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #f0f0f0; /* Fondo claro */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Muestra un cursor de clic */
 }
 
 .back-button:hover {
-  background-color: #444;
-}
-
-.back-button:active {
-  transform: scale(0.98);
+  background-color: #e0e0e0; /* Fondo más oscuro al pasar el ratón */
 }
 
 /* Estilos para los formularios */
