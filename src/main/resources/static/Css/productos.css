@@ -25,7 +25,6 @@ body {
                font-size: 1rem;
            }
        }
-
 /* Ocultar la barra de scroll pero permitir el desplazamiento */
 html, body {
     overflow-y: scroll; /* Asegura que el scroll vertical esté habilitado */
