@@ -128,7 +128,7 @@
                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
                 >
                   <option value="Customer">Cliente</option>
-                  <option value="Administrator">Administrador</option>
+                  <option value="Administrator">Administrador </option>
                 </select>
               </div>
 
@@ -154,14 +154,67 @@
                   type="button"
                   class="w-full btn-secondary font-bold py-2 px-4 rounded-md"
                 >
-                  Iniciar Sesión
+                Iniciar Sesión
+              </button>
+            </div>
+          </form>
+            <!-- Botón de administrador -->
+            <div class="admin-section">
+              <a href="./admin-login-html.html" class="block">
+                <button
+                  type="button"
+                  class="w-full btn-admin font-bold py-2 px-4 rounded-md flex items-center justify-center"
+                >
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    class="h-5 w-5 mr-2" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path 
+                      stroke-linecap="round" 
+                      stroke-linejoin="round" 
+                      stroke-width="2" 
+                      d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" 
+                    />
+                  </svg>
+                  Administrador
                 </button>
               </a>
             </div>
           </div>
         </div>
       </div>
-    </main>
-    <script src="js/register.js"></script>
-  </body>
+    </div>
+  </main>
+  <script src="js/login.js"></script>
+  <style>
+    .admin-section {
+      margin-top: 1rem;
+      text-align: center;
+      padding-top: 1rem;
+      border-top: 2px solid rgba(229, 62, 62, 0.2);
+    }
+    
+    .btn-admin {
+      background: linear-gradient(to bottom, #9C4146, #7E2F33);
+      color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(156, 65, 70, 0.3), 0 1px 3px rgba(0, 0, 0, 0.1);
+      border: none;
+    }
+    
+    .btn-admin:hover {
+      background: linear-gradient(to bottom, #7E2F33, #63242A);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 10px rgba(156, 65, 70, 0.4), 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-admin:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 3px rgba(156, 65, 70, 0.3);
+    }
+  </style>
+</body>
 </html>
