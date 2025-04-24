@@ -74,42 +74,10 @@ nav a:hover {
 /*cuerpo*/
 
 /*Carrucel*/
-.swiper-button-prev, .swiper-button-next {
-    color: white !important;
-    background: #7c8384;
-    padding: 20px;
-    border-radius: 50%;
-}
-
 .gradient-overlay {
     background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
 }
 
-#swiper-message {
-    position: fixed;
-    bottom: 7%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-family: 'Noto Sans', sans-serif;
-    font-size: 1.5rem;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-#swiper-message.visible {
-    opacity: 1;
-}
-/*Botones carrucel*/
 .bg-blue-600 {
     background-color: rgba(4, 4, 4, 0.6);
     font-family: 'Quicksand';
@@ -131,64 +99,6 @@ nav a:hover {
 }
 /*Carrucel*/
 
-/*Carrito*/
-#carrito-lateral {
-    position: fixed;
-    left: 5px;
-    top: 8%;
-    width: 55px;
-    height: 55px;
-    background-color: rgb(4, 4, 4, 0.5);
-    border: 2px solid #7c7c84;
-    border-radius: 50%;
-    box-shadow: 0px 4px 6px rgba(4, 4, 4, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    z-index: 1000;
-    transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease;
-    overflow: hidden;
-    color: #ede0dd;
-}
-
-/* Estilos cuando se expande */
-#carrito-lateral.expanded {
-    width: 250px;
-    height: 300px;
-    border-radius: 10px;
-    cursor: grab;
-    padding: 10px;
-    background-image: url("./images/images.jpg");
-    overflow-y: auto;
-}
-
-/* Ícono del carrito */
-#icono-carrito {
-    font-size: 35px;
-    display: block;
-}
-
-/* Contenido oculto por defecto */
-#carrito-contenido {
-    display: none;
-}
-
-/* Muestra el contenido cuando está expandido */
-#carrito-lateral.expanded #carrito-contenido {
-    display: block;
-}
-
-/* Botón finalizar compra */
-#finalizar-compra {
-    display: none;
-}
-
-#carrito-lateral.expanded #finalizar-compra {
-    display: block;
-}
-
-/*Carrito*/
 
 /* Ofertas */
 /* Botón flotante */
@@ -319,20 +229,6 @@ nav a:hover {
     opacity: 1;  /* Aumenta la opacidad al pasar el ratón */
 }
 /* Ofertas */
-
-/*Botones carrucel*/
-.bg-blue-600 {
-    background-color: #b22227;
-}
-
-.bg-green-600 {
-    background-color: #b22227;
-}
-
-.bg-red-600 {
-    background-color: #b22227;
-}
-/*Botones carrucel*/
 
 nav a:hover {
     background: linear-gradient(to right, #7c7c84, #ede0dd)
