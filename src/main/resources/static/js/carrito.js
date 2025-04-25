@@ -57,7 +57,7 @@ function actualizarCarrito() {
         
         // Botón reducir cantidad
         const reducirBtn = document.createElement('button');
-        reducirBtn.textContent = '-';
+        reducirBtn.textContent = '';
         reducirBtn.className = 'btn-control';
         reducirBtn.style.marginRight = '5px';
         reducirBtn.style.padding = '2px 8px';
