@@ -3,14 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>PanelUsuario</title>
     <link rel="stylesheet" href="Css/usercontrol.css" />
   </head>
   <body>
-    <div class="main-container">
+    <main>
       <div class="header-actions">
         <a href="productos.html" class="back-button">Volver a Menu</a>
       </div>
+      <div>
+        <button id="delete-user" class="back-button">Eliminar usuario</button>
+      </div>
+    <section>
+      
+    <div class="main-container">
+      
+      <form id="add-direction-form">
+        <input type="text" id="street" placeholder="Calle" required />
+        <input type="text" id="neighborhood" placeholder="Colonia" required />
+        <input type="text" id="zip-code" placeholder="Código Postal" required />
+        <input type="text" id="country" placeholder="País" required />
+        <button type="submit">Actualizar Dirección</button>
+      </form>
+
       <form id="update-user-form">
         <input type="text" id="update-name" placeholder="Nombre" required />
         <input
@@ -28,28 +43,11 @@
         <button type="submit">Actualizar Usuario</button>
       </form>
 
-      <form id="add-direction-form">
-        <input type="text" id="street" placeholder="Calle" required />
-        <input type="text" id="neighborhood" placeholder="Colonia" required />
-        <input type="text" id="zip-code" placeholder="Código Postal" required />
-        <input type="text" id="country" placeholder="País" required />
-        <button type="submit">Agregar Dirección</button>
-      </form>
-
       <div id="orders-container">
         <!-- Los pedidos se cargarán aquí -->
     </div>
-    
-        
-        <div id="user-orders-container" class="px-4">
-            <!-- Aquí se cargarán los pedidos dinámicamente -->
-            <div class="loading text-center">
-                <i class="fas fa-spinner fa-spin fa-3x text-white"></i>
-                <p class="mt-2 text-white">Cargando tus pedidos...</p>
-            </div>
-        </div>
-            
-    </div>
+    </section>
+    </main>
     <script src="js/Usercontrol.js"></script>
   </body>
 </html>

@@ -1,7 +1,10 @@
 package com.generation.elestudiante.controller;
 
 import com.generation.elestudiante.dto.DirectionsRequest;
+import com.generation.elestudiante.model.Order;
 import com.generation.elestudiante.model.User;
+import com.generation.elestudiante.repository.DirectionsRepository;
+import com.generation.elestudiante.repository.OrderRepository;
 import com.generation.elestudiante.repository.UserRepository;
 import com.generation.elestudiante.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +26,14 @@ public class UserController {
     private final UserService userService;
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final OrderRepository orderRepository;
 
     @Autowired
-    public UserController(UserService userService, UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public UserController(UserService userService, UserRepository userRepository, PasswordEncoder passwordEncoder, OrderRepository orderRepository) {
         this.userService = userService;
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.orderRepository = orderRepository;
     }
 
     @GetMapping
@@ -44,8 +49,9 @@ public class UserController {
     }
 
     @PostMapping
-    public User addUser(@RequestBody User user){
-        return userService.addUser(user);
+    public ResponseEntity<String> addUser(@RequestBody User user) {
+        userService.addUser(user);
+        return ResponseEntity.ok("Gracias por registrarte. Inicia sesión y agrega una dirreccion a tu cuenta gracias");
     }
 
     @PostMapping(path = "{userId}/add-direction") // http://localhost:8080/api/users/2/add-direction
@@ -85,17 +91,28 @@ public class UserController {
         }).orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error al actualizar: datos incorrectos"));
     }
 
-
-
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUser(@PathVariable Integer id) {
-        return userService.getUserById(id)
-                .map(user -> {
-                    userService.deleteUser(id);
-                    return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
-                })
-                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    public ResponseEntity<String> deleteUser(@PathVariable Integer id) {
+        try {
+            // Verificar que el usuario existe
+            Optional<User> user = userRepository.findById(id);
+            if (user.isEmpty()) {
+                return new ResponseEntity<>("Usuario no encontrado", HttpStatus.NOT_FOUND);
+            }
+
+            // Eliminar las órdenes o direcciones asociadas (si aplica)
+            orderRepository.deleteById(id);
+            // Eliminar el usuario
+            userRepository.deleteById(id);
+
+            return new ResponseEntity<>("Usuario eliminado correctamente", HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ResponseEntity<>("Error al eliminar el usuario: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
+
+
 
     @PostMapping(path = "login")
     public ResponseEntity<?> loginUser(@RequestBody User user) {

@@ -3,6 +3,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
 /* fonts */
+/* Ocultar la barra de scroll pero permitir el desplazamiento */
+html, body {
+  overflow-y: scroll; /* Asegura que el scroll vertical esté habilitado */
+  scrollbar-width: none; /* Oculta la barra en Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Oculta la barra en Chrome, Safari y Edge */
+}
 body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;

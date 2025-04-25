@@ -12,6 +12,15 @@
     --crema: #ede0dd;
     --gris: #7c7c84;
 }
+html, body {
+    overflow-y: scroll; /* Asegura que el scroll vertical esté habilitado */
+    scrollbar-width: none; /* Oculta la barra en Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none; /* Oculta la barra en Chrome, Safari y Edge */
+}
 
 * {
     margin: 0;
@@ -37,6 +46,26 @@ body {
     font-size: 3.5rem;
     font-family: 'Lobster';
     color: #040404;
+}
+@media (max-width: 720px) {
+    .resumen {
+        font-size: .6rem;
+    }
+    .title {
+        font-size: 1.3rem;
+    }
+    h3 {
+        font-size: .8rem;
+    }
+    #link {
+        font-size: .7rem;
+    }
+    .space-x-4 {
+        font-size: 1rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
 }
 
 .fixed-header {
@@ -71,7 +100,7 @@ nav a:hover {
 /* Botones de navegación */
 
 body {
-    font-family: 'Merriweather', serif;
+    font-family: 'Quicksand', serif;
     background-color: var(--crema);
     color: var(--negro);
     line-height: 1.6;
@@ -197,7 +226,7 @@ h2 {
     padding: 0.8rem;
     border: 1px solid var(--gris);
     border-radius: 5px;
-    font-family: 'Merriweather', serif;
+    font-family: 'Quicksand', serif;
     font-size: 1rem;
 }
 
@@ -211,7 +240,7 @@ button {
     color: var(--crema);
     border: none;
     padding: 1rem 2rem;
-    font-family: 'Merriweather', serif;
+    font-family: 'Quicksand', serif;
     font-size: 1rem;
     font-weight: 600;
     border-radius: 5px;

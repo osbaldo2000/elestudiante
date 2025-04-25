@@ -69,6 +69,26 @@ body::-webkit-scrollbar {
     }
 }
 
+@media (max-width: 720px) {
+    .resumen {
+        font-size: .6rem;
+    }
+    .title {
+        font-size: 1.3rem;
+    }
+    h3 {
+        font-size: .8rem;
+    }
+    #link {
+        font-size: .7rem;
+    }
+    .space-x-4 {
+        font-size: 1rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}
 nav a {
     transition: transform 0.2s ease-in-out; 
     padding: 2px 12px; 

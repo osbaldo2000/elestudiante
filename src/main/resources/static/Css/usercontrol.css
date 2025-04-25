@@ -1,9 +1,18 @@
-/* Estilos generales */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  overflow-y: scroll; /* Asegura que el scroll vertical esté habilitado */
+  scrollbar-width: none; /* Oculta la barra en Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Oculta la barra en Chrome, Safari y Edge */
 }
 
 body {
@@ -16,12 +25,17 @@ body {
   padding: 20px;
 }
 
+/* Adaptación para layout horizontal */
+section {
+  width: 100%;
+  max-width: 920px; /* Aumentado para acomodar los dos formularios */
+}
+
 .main-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
-  max-width: 450px;
 }
 
 .header-actions {
@@ -32,28 +46,32 @@ body {
 }
 
 .back-button {
-  text-decoration: none; /* Quita la línea de subrayado */
-  color: inherit; /* Mantiene el color del texto original */
-  padding: 10px 20px; /* Añade un poco de espaciado */
-  border: 1px solid #000; /* Opcional: Añade un borde */
-  border-radius: 5px; /* Bordes redondeados */
-  background-color: #f0f0f0; /* Fondo claro */
-  font-size: 16px; /* Tamaño de fuente */
-  cursor: pointer; /* Muestra un cursor de clic */
+  text-decoration: none;
+  color: inherit;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #b22227;
+  color: #e0e0e0;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .back-button:hover {
-  background-color: #e0e0e0; /* Fondo más oscuro al pasar el ratón */
+  background-color: #9b1d21;
 }
-
-/* Estilos para los formularios */
+@media (max-width: 720px) {
+  .back-button {
+    width: 100px;
+    font-size: 0.55rem;
+  }
+}
+/* Estilos para los formularios - adaptados para horizontal */
 form {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   padding: 30px;
-  width: 100%;
-  max-width: 450px;
+  width: 48%; /* Cambiado para layout horizontal */
   margin-bottom: 30px;
 }
 
@@ -75,7 +93,7 @@ form#update-user-form::before {
 }
 
 form#add-direction-form::before {
-  content: "Agregar Dirección";
+  content: "Actualizar Dirección";
 }
 
 /* Estilos para inputs */
@@ -121,7 +139,39 @@ button:active {
   transform: scale(0.98);
 }
 
+/* Contenedor de pedidos */
+#orders-container {
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Clases de órdenes */
+.order-total {
+  font-weight: 900;
+}
+
+.delete-order {
+  width: 100px;
+}
+
+.show-details {
+  width: 150px;
+}
+
 /* Estilos responsivos */
+@media (max-width: 768px) {
+  form {
+    width: 100%; /* En móviles, formularios a ancho completo */
+  }
+  
+  .main-container {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 500px) {
   form {
     padding: 20px;
@@ -133,11 +183,6 @@ button:active {
   }
 }
 
-.order-container { margin-bottom: 20px; border: 1px solid #ccc; padding: 10px; border-radius: 8px; }
-.order-header { display: flex; justify-content: space-between; align-items: center; }
-.order-status { padding: 4px 8px; border-radius: 4px; }
-.status-pending { background-color: orange; color: white; }
-.status-preparing { background-color: blue; color: white; }
-.status-delivered { background-color: green; color: white; }
-.order-details { display: none; margin-top: 10px; }
-.order-total { font-weight: bold; text-align: right; }
+#delete-user{
+  width: 170px;
+}

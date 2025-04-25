@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         effect: 'coverflow',  // Efecto de galería 'flip' 'cube' 'cards' 'coverflow'
         grabCursor: true, // Permite arrastrar como en una galería
         centeredSlides: true, // Centra las imágenes
-        slidesPerView: 'auto', // Se ajusta automáticamente
+        slidesPerView: 1, // Se ajusta automáticamente
         coverflowEffect: {
             rotate: 30, // Rotación de las imágenes
             stretch: 0, // No se estiran

@@ -4,6 +4,7 @@ import com.generation.elestudiante.dto.DirectionsRequest;
 import com.generation.elestudiante.model.Directions;
 import com.generation.elestudiante.model.User;
 import com.generation.elestudiante.repository.DirectionsRepository;
+import com.generation.elestudiante.repository.OrderRepository;
 import com.generation.elestudiante.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,12 +25,14 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final DirectionsRepository directionsRepository;
+    private final OrderRepository orderRepository;
 
     @Autowired
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, DirectionsRepository directionsRepository) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, DirectionsRepository directionsRepository, OrderRepository orderRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.directionsRepository = directionsRepository;
+        this.orderRepository = orderRepository;
     }
 
     public List<User> getAllUsers() {
@@ -65,26 +68,12 @@ public class UserService {
     }
 
     public void deleteUser(Integer id) {
+        if (!userRepository.existsById(id)) {
+            throw new RuntimeException("El usuario no existe");
+        }
+        orderRepository.deleteById(id);
+
         userRepository.deleteById(id);
-    }
-
-    @PostMapping(path = "login") // http://localhost:8080/api/users/login
-    public ResponseEntity<?> loginUser(@RequestBody User user) {
-        Optional<User> optionalUser = userRepository.findByEmail(user.getEmail());
-        if (optionalUser.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Correo o contraseña incorrectos");
-        }
-
-        User existingUser = optionalUser.get();
-        if (!passwordEncoder.matches(user.getPassword(), existingUser.getPassword())) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Correo o contraseña incorrectos");
-        }
-
-        Map<String, Object> response = new HashMap<>();
-        response.put("success", true);
-        response.put("userId", existingUser.getUserId());
-
-        return ResponseEntity.ok(response);
     }
 
 }
